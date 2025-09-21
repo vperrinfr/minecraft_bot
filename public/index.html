@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Bot Interface</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Minecraft';
+            src: url('https://fonts.gstatic.com/s/orbitron/v31/yMJMMIlzdpvBhQQL_SC3X9yhF25-T1nyGy6BoWgz.woff2') format('woff2');
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><img src="images/creeper.png" alt="Creeper" class="creeper-icon">Minecraft Bot Interface</h1>
+            <div class="status-bar">
+                <span id="connection-status" class="status disconnected">Disconnected</span>
+                <span id="ollama-status" class="status unknown">Ollama: Unknown</span>
+            </div>
+        </header>
+
+        <main>
+            <div class="control-panel">
+                <!-- Bot Connection -->
+                <section class="section">
+                    <h2>Bot Connection</h2>
+                    <div class="connection-controls">
+                        <button id="connect-btn" class="btn btn-primary">Connect Bot</button>
+                        <button id="disconnect-btn" class="btn btn-secondary">Disconnect Bot</button>
+                    </div>
+                </section>
+
+                <!-- Movement Controls -->
+                <section class="section">
+                    <h2>Movement Controls</h2>
+                    <div class="movement-grid">
+                        <div class="movement-row">
+                            <div class="movement-spacer"></div>
+                            <button id="forward-btn" class="btn btn-movement" data-direction="forward">↑</button>
+                            <div class="movement-spacer"></div>
+                        </div>
+                        <div class="movement-row">
+                            <button id="left-btn" class="btn btn-movement" data-direction="left">←</button>
+                            <button id="jump-btn" class="btn btn-movement btn-jump">⚡</button>
+                            <button id="right-btn" class="btn btn-movement" data-direction="right">→</button>
+                        </div>
+                        <div class="movement-row">
+                            <div class="movement-spacer"></div>
+                            <button id="backward-btn" class="btn btn-movement" data-direction="backward">↓</button>
+                            <div class="movement-spacer"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Natural Language Commands -->
+                <section class="section">
+                    <h2>Natural Language Commands</h2>
+                    <div class="nl-controls">
+                        <textarea 
+                            id="nl-input" 
+                            placeholder="Type your command in natural language... (e.g., 'move forward', 'jump', 'say hello')"
+                            rows="3"
+                        ></textarea>
+                        <button id="nl-send-btn" class="btn btn-primary">Send Command</button>
+                    </div>
+                    <div id="nl-status" class="status-message"></div>
+                </section>
+
+                <!-- Dropdown Commands -->
+                <section class="section">
+                    <h2>Quick Commands</h2>
+                    <div class="dropdown-controls">
+                        <select id="command-select">
+                            <option value="">Select a command...</option>
+                            <option value="move:forward">Move Forward</option>
+                            <option value="move:backward">Move Backward</option>
+                            <option value="move:left">Move Left</option>
+                            <option value="move:right">Move Right</option>
+                            <option value="jump">Jump</option>
+                            <option value="attack">Attack Nearest Entity</option>
+                            <option value="chat">Chat Message</option>
+                            <option value="getInventory">Get Inventory</option>
+                            <option value="getHealth">Get Health</option>
+                            <option value="getPosition">Get Position</option>
+                        </select>
+                        <input 
+                            id="chat-input" 
+                            type="text" 
+                            placeholder="Enter chat message (for chat command)"
+                            style="display: none;"
+                        >
+                        <button id="execute-btn" class="btn btn-primary">Execute</button>
+                    </div>
+                </section>
+
+                <!-- Bot Status -->
+                <section class="section">
+                    <h2>Bot Status</h2>
+                    <div id="bot-status" class="status-display">
+                        <div class="status-item">
+                            <span class="label">Position:</span>
+                            <span id="position-value">Unknown</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="label">Health:</span>
+                            <span id="health-value">Unknown</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="label">Food:</span>
+                            <span id="food-value">Unknown</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="label">Inventory:</span>
+                            <span id="inventory-count">0 items</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Chat Log -->
+            <div class="chat-panel">
+                <h2>Chat & Events</h2>
+                <div id="chat-log" class="chat-log"></div>
+                <div class="chat-controls">
+                    <input id="chat-message" type="text" placeholder="Type a message to send to Minecraft chat...">
+                    <button id="send-chat" class="btn btn-primary">Send</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "minecraft-bot-interface",
+  "version": "1.0.0",
+  "description": "Web interface for Minecraft bot using Mineflayer API",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "dev": "nodemon bot.js"
+  },
+  "dependencies": {
+    "mineflayer": "^4.15.1",
+    "ws": "^8.14.2",
+    "express": "^4.18.2",
+    "ollama": "^0.5.8",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "keywords": ["minecraft", "bot", "mineflayer", "web", "interface"],
+  "author": "Your Name",
+  "license": "MIT"
+}
