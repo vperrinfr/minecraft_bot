@@ -5,10 +5,10 @@ module.exports = {
   // Minecraft Server Configuration
   minecraft: {
     host: 'localhost',        // Your Minecraft server address
-    port: 25565,              // Server port (default is 25565)
+    port: 56340,              // Server port (default is 25565)
     username: 'MinecraftBot', // Bot username (must be available on server)
     password: '',             // Bot password (leave empty for offline mode)
-    version: '1.20.1'         // Server version (must match your server)
+    version: '1.21.8'         // Server version (must match your server)
   },
 
   // Ollama Configuration (optional)
