@@ -2,6 +2,8 @@
 
 A modern web interface for controlling a Minecraft bot using the Mineflayer API. Features both natural language commands powered by Ollama and traditional dropdown-based controls.
 
+![Minecraft Bot Interface](images_repo/app.png)
+
 ## Features
 
 - 🤖 **Minecraft Bot Control**: Full integration with Mineflayer API
