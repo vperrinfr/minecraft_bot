@@ -14,7 +14,7 @@ module.exports = {
   // Ollama Configuration (optional)
   ollama: {
     host: 'http://localhost:11434',  // Ollama server address
-    model: 'llama2'                  // Model to use for natural language processing
+    model: 'granite3.3:2b'                  // Model to use for natural language processing
   },
 
   // Web Server Configuration

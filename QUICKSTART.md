@@ -75,7 +75,7 @@ ollama serve
 
 3. Download a model:
 ```bash
-ollama pull llama2
+ollama pull granite3.3:2b
 ```
 
 ## 📁 Project Structure
@@ -102,7 +102,7 @@ Minecraft/
 
 **Natural language not working?**
 - Install and start Ollama
-- Pull a model: `ollama pull llama2`
+- Pull a model: `ollama pull granite3.3:2b`
 
 **Web interface won't load?**
 - Check ports 3000 and 8080 are free
